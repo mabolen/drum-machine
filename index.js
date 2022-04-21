@@ -12,44 +12,44 @@ const App = () => {
 
     const playAudio = (letter) => {
         const audio = document.getElementById(letter)
-        console.log(audio)
+        audio.currentTime = 0
         audio.play()
         switch(letter){
             case 'Q': setDisplayText('kick');
-            $("#kick").fadeOut(100);
-            $("#kick").fadeIn(100);
+            $("#kick").fadeOut(50);
+            $("#kick").fadeIn(50);
             break;
             case 'W': setDisplayText('snare');
-            $("#snare").fadeOut(100);
-            $("#snare").fadeIn(100);
+            $("#snare").fadeOut(50);
+            $("#snare").fadeIn(50);
             break;
             case 'E': setDisplayText('clap');
-            $("#clap").fadeOut(100);
-            $("#clap").fadeIn(100);
+            $("#clap").fadeOut(50);
+            $("#clap").fadeIn(50);
             break;
             case 'A': setDisplayText('closed hat');
-            $("#closed-hat").fadeOut(100);
-            $("#closed-hat").fadeIn(100);
+            $("#closed-hat").fadeOut(50);
+            $("#closed-hat").fadeIn(50);
             break;
             case 'S': setDisplayText('open hat');
-            $("#open-hat").fadeOut(100);
-            $("#open-hat").fadeIn(100);
+            $("#open-hat").fadeOut(50);
+            $("#open-hat").fadeIn(50);
             break;
             case 'D': setDisplayText('cymbal');
-            $("#cymbal").fadeOut(100);
-            $("#cymbal").fadeIn(100);
+            $("#cymbal").fadeOut(50);
+            $("#cymbal").fadeIn(50);
             break;
             case 'Z': setDisplayText('floor tom');
-            $("#floor-tom").fadeOut(100);
-            $("#floor-tom").fadeIn(100);
+            $("#floor-tom").fadeOut(50);
+            $("#floor-tom").fadeIn(50);
             break;
             case 'X': setDisplayText('mid tom');
-            $("#mid-tom").fadeOut(100);
-            $("#mid-tom").fadeIn(100);
+            $("#mid-tom").fadeOut(50);
+            $("#mid-tom").fadeIn(50);
             break;
             case 'C': setDisplayText('high tom');
-            $("#high-tom").fadeOut(100);
-            $("#high-tom").fadeIn(100);
+            $("#high-tom").fadeOut(50);
+            $("#high-tom").fadeIn(50);
             break;
             default: setDisplayText('');
             break;
@@ -69,10 +69,10 @@ const App = () => {
     }
 
   return (
-    <div className='container-fluid'>
+    <div className='container-fluid overall'>
         <div id="drum-box" className='row'>
         <div id='drum-machine' className='col-sm-4'>
-            <h1 id="title" className='col-sm-4'>Drum Machine</h1>
+            <h1 id="title" className='col-sm-4'>Beatboi 9000</h1>
             <div id='drum-pads' className=''>
                 <div onClick={() => {playAudio('Q')}} className='drum-pad' id='kick'>Q<audio className="clip" id="Q" src={sounds.kick}></audio></div>
                 <div onClick={() => {playAudio('W')}} className='drum-pad' id='snare'>W<audio className="clip" id="W" src={sounds.snare}></audio></div>
