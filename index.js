@@ -1,5 +1,3 @@
-
-
 const App = () => {
 
     const [displayText, setDisplayText] = React.useState('')
@@ -62,7 +60,7 @@ const App = () => {
         midTom: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/42[kb]midtom.wav.mp3',
         highTom: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/39[kb]hitom.wav.mp3'
     }
-    
+
     const padLetters = [
         ['Q', 'kick', sounds.kick], 
         ['W', 'snare', sounds.snare], 
@@ -80,16 +78,20 @@ const App = () => {
     })
 
   return (
-    <div className='container-fluid overall'>
-        <div id="drum-box" className='row'>
-        <div id='drum-machine' className='col-sm-4'>
-            <h1 id="title" className='col-sm-4'>Beatboi 9000</h1>
-            <div id='drum-pads' className=''>
+    <div className='container overall'>
+        
+        <div id='drum-machine' >
+            <div id='title-box'>
+                <h1 id="title">Beatboi 9000</h1>
+            </div>
+            <div id='drum-pads'>
                 {padKeys}
             </div>
-            <div id='display' className="col-sm-4">{displayText}</div>
+            <div id='display-box'>
+                <div id='display'><p>{displayText}</p></div>
+            </div>
         </div>
-        </div>
+        
     </div>
   )
 }
