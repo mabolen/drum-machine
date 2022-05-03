@@ -9,47 +9,41 @@ const App = () => {
         })
     }, [])
 
-
     const playAudio = (letter) => {
         const audio = document.getElementById(letter)
         audio.currentTime = 0
         audio.play()
+        const fadeEffect = (id) => {
+            $(id).fadeOut(50)
+            $(id).fadeIn(50)
+        }
         switch(letter){
             case 'Q': setDisplayText('kick');
-            $("#kick").fadeOut(50);
-            $("#kick").fadeIn(50);
+            fadeEffect('#kick')
             break;
             case 'W': setDisplayText('snare');
-            $("#snare").fadeOut(50);
-            $("#snare").fadeIn(50);
+            fadeEffect('#snare')
             break;
             case 'E': setDisplayText('clap');
-            $("#clap").fadeOut(50);
-            $("#clap").fadeIn(50);
+            fadeEffect('#clap')
             break;
             case 'A': setDisplayText('closed hat');
-            $("#closed-hat").fadeOut(50);
-            $("#closed-hat").fadeIn(50);
+            fadeEffect('#closed-hat')
             break;
             case 'S': setDisplayText('open hat');
-            $("#open-hat").fadeOut(50);
-            $("#open-hat").fadeIn(50);
+            fadeEffect('#open-hat')
             break;
             case 'D': setDisplayText('cymbal');
-            $("#cymbal").fadeOut(50);
-            $("#cymbal").fadeIn(50);
+            fadeEffect('#cymbal')
             break;
             case 'Z': setDisplayText('floor tom');
-            $("#floor-tom").fadeOut(50);
-            $("#floor-tom").fadeIn(50);
+            fadeEffect('#floor-tom')
             break;
             case 'X': setDisplayText('mid tom');
-            $("#mid-tom").fadeOut(50);
-            $("#mid-tom").fadeIn(50);
+            fadeEffect('#mid-tom')
             break;
             case 'C': setDisplayText('high tom');
-            $("#high-tom").fadeOut(50);
-            $("#high-tom").fadeIn(50);
+            fadeEffect('#high-tom')
             break;
             default: setDisplayText('');
             break;
