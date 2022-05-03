@@ -1,4 +1,5 @@
 
+
 const App = () => {
 
     const [displayText, setDisplayText] = React.useState('')
@@ -61,6 +62,22 @@ const App = () => {
         midTom: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/42[kb]midtom.wav.mp3',
         highTom: 'https://sampleswap.org/samples-ghost/DRUMS%20(SINGLE%20HITS)/Toms/39[kb]hitom.wav.mp3'
     }
+    
+    const padLetters = [
+        ['Q', 'kick', sounds.kick], 
+        ['W', 'snare', sounds.snare], 
+        ['E', 'clap', sounds.clap], 
+        ['A', 'closed-hat', sounds.closedHat], 
+        ['S', 'open-hat', sounds.openHat], 
+        ['D', 'cymbal', sounds.cymbal], 
+        ['Z', 'floor-tom', sounds.floorTom], 
+        ['X', 'mid-tom', sounds.midTom], 
+        ['C', 'high-tom', sounds.highTom]
+    ]
+
+    const padKeys = padLetters.map( e => {
+        return <div onClick={() => {playAudio(e[0])}} key={e[0]} className='drum-pad' id={e[1]}>{e[0]}<audio className="clip" id={e[0]} src={e[2]}></audio></div>
+    })
 
   return (
     <div className='container-fluid overall'>
@@ -68,15 +85,7 @@ const App = () => {
         <div id='drum-machine' className='col-sm-4'>
             <h1 id="title" className='col-sm-4'>Beatboi 9000</h1>
             <div id='drum-pads' className=''>
-                <div onClick={() => {playAudio('Q')}} className='drum-pad' id='kick'>Q<audio className="clip" id="Q" src={sounds.kick}></audio></div>
-                <div onClick={() => {playAudio('W')}} className='drum-pad' id='snare'>W<audio className="clip" id="W" src={sounds.snare}></audio></div>
-                <div onClick={() => {playAudio('E')}} className='drum-pad' id='clap'>E<audio className="clip" id="E" src={sounds.clap}></audio></div>
-                <div onClick={() => {playAudio('A')}} className='drum-pad' id='closed-hat'>A<audio className="clip" id="A" src={sounds.closedHat}></audio></div>
-                <div onClick={() => {playAudio('S')}} className='drum-pad' id='open-hat'>S<audio className="clip" id="S" src={sounds.openHat}></audio></div>
-                <div onClick={() => {playAudio('D')}} className='drum-pad' id='cymbal'>D<audio className="clip" id="D" src={sounds.cymbal}></audio></div>
-                <div onClick={() => {playAudio('Z')}} className='drum-pad' id='floor-tom'>Z<audio className="clip" id="Z" src={sounds.floorTom}></audio></div>
-                <div onClick={() => {playAudio('X')}} className='drum-pad' id='mid-tom'>X<audio className="clip" id="X" src={sounds.midTom}></audio></div>
-                <div onClick={() => {playAudio('C')}} className='drum-pad' id='high-tom'>C<audio className="clip" id="C" src={sounds.highTom}></audio></div>
+                {padKeys}
             </div>
             <div id='display' className="col-sm-4">{displayText}</div>
         </div>
